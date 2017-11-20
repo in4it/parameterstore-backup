@@ -1,0 +1,38 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+      {
+        "Action": [
+          "ssm:GetParameterHistory",
+          "ssm:GetParameter",
+          "ssm:GetParameters",
+          "ssm:GetParametersByPath",
+          "ssm:DescribeParameters"
+        ],
+        "Resource": [
+          "arn:aws:ssm:region:accountid:*"
+        ],
+        "Effect": "Allow"
+      },
+      {
+        "Action": [
+          "kms:Decrypt"
+        ],
+        "Resource": [
+          "arn:aws:kms:region:accountid:key/paramstore-encryption-keys"
+        ],
+        "Effect": "Allow"
+      },
+      {
+        "Action": [
+          "kms:Decrypt",
+          "kms:Encrypt",
+          "kms:GenerateDataKey"
+        ],
+        "Resource": [
+          "arn:aws:kms:region:accountid:key/backup-key"
+        ],
+        "Effect": "Allow"
+      }
+    ]
+}
