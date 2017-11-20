@@ -1,5 +1,5 @@
 # Parameterstore-backup
-Python script to backup the AWS paramter store in S3.
+Python script to backup the AWS parameter store in S3.
 
 ## Configuration
 You can set the following environment variables:
